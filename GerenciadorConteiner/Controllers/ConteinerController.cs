@@ -1,10 +1,7 @@
-﻿using Azure.Core;
+﻿using Application.Infraestructure.Domain;
+using Application.Models;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using WebApplication1.Infraestructure.Domain;
-using WebApplication1.Infraestructure.Standard;
-using WebApplication1.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

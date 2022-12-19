@@ -4,11 +4,16 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApplication1.Models
+namespace Application.Models
 {
     [Table("CONTEINERS")]
     public class Conteiner
     {
+        public Conteiner()
+        {
+            Movimentacoes = new List<Movimentacao>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -26,6 +31,8 @@ namespace WebApplication1.Models
         public enum TipoEnum { TIPO_20, TIPO_40 }
         public enum StatusEnum { CHEIO, VAZIO }
         public enum CategoriaEnum { IMPORTACAO, EXPORTACAO }
+
+        public ICollection<Movimentacao> Movimentacoes { get; set; }
 
         public FluentValidation.Results.ValidationResult ValidateConteiner(IValidator<Conteiner> _validator)
         {

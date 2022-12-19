@@ -4,6 +4,7 @@ using Application.Infraestructure.Standard;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20221219211522_InclusaoMovimentacoes")]
+    partial class InclusaoMovimentacoes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,7 +81,7 @@ namespace WebApplication1.Migrations
 
                     b.HasIndex("ConteinerId");
 
-                    b.ToTable("MOVIMENTACOES");
+                    b.ToTable("Movimentacoes");
                 });
 
             modelBuilder.Entity("Application.Models.Movimentacao", b =>

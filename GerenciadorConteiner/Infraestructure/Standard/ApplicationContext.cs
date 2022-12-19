@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication1.Models;
+using Application.Models;
 
-namespace WebApplication1.Infraestructure.Standard
+namespace Application.Infraestructure.Standard
 {
     public class ApplicationContext : DbContext
     {
@@ -15,5 +15,6 @@ namespace WebApplication1.Infraestructure.Standard
         }
 
         public DbSet<Conteiner> Conteiners { get; set; }
+        public DbSet<Movimentacao> Movimentacoes { get; set; }
     }
 }
